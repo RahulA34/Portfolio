@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rahul A | AI Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: linear-gradient(180deg, #020617, #020617, #030712);
+        color: #e5e7eb;
+      }
+
+      /* NAVBAR */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(2, 6, 23, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #1e293b;
+        z-index: 1000;
+      }
+      .nav {
+        max-width: 1200px;
+        margin: auto;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 22px;
+      }
+      .nav button {
+        background: none;
+        border: none;
+        font-size: 15px;
+        color: #cbd5f5;
+        cursor: pointer;
+      }
+      .nav button:hover {
+        color: #38bdf8;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 110px 24px;
+        max-width: 1100px;
+        margin: auto;
+        animation: fadeUp 0.8s ease both;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+        background: linear-gradient(to right, #38bdf8, #a78bfa, #22d3ee);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      /* HERO */
+      #home {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      #home h1 {
+        font-size: 64px;
+        color: #fff;
+      }
+      #home h3 {
+        font-size: 34px;
+        margin: 14px 0;
+        background: linear-gradient(to right, #22d3ee, #38bdf8, #a78bfa);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      #home p {
+        max-width: 680px;
+        margin: 20px auto;
+        color: #94a3b8;
+        line-height: 1.8;
+      }
+
+      .btns {
+        margin-top: 32px;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+      }
+      .btn {
+        padding: 14px 28px;
+        border-radius: 12px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-decoration: none;
+      }
+      .primary {
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        color: #fff;
+      }
+      .outline {
+        border: 2px solid #38bdf8;
+        color: #38bdf8;
+      }
+      .btn:hover {
+        transform: scale(1.07);
+      }
+
+      /* CARD */
+      .card {
+        background: linear-gradient(145deg, #020617, #020617);
+        border: 1px solid #1e293b;
+        border-radius: 20px;
+        padding: 30px;
+        transition: 0.4s;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(56, 189, 248, 0.18);
+        border-color: #38bdf8;
+      }
+
+      /* ABOUT */
+      .about-new {
+        max-width: 850px;
+        margin: auto;
+      }
+      .about-new h3 {
+        font-size: 26px;
+        color: #fff;
+        margin-bottom: 18px;
+      }
+      .about-new p {
+        color: #94a3b8;
+        line-height: 1.9;
+        margin-bottom: 18px;
+      }
+      .about-new b {
+        color: #38bdf8;
+      }
+      .about-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .about-tags span {
+        padding: 10px 18px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #020617, #020617);
+        border: 1px solid #1e293b;
+        transition: 0.3s;
+      }
+      .about-tags span:hover {
+        background: linear-gradient(135deg, #38bdf8, #a78bfa);
+        color: #020617;
+      }
+
+      /* VERTICAL SKILLS */
+      .skills {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 420px;
+        margin: auto;
+      }
+      .skill {
+        text-align: center;
+        padding: 14px;
+        border-radius: 14px;
+        border: 1px solid #1e293b;
+        background: linear-gradient(135deg, #020617, #020617);
+      }
+
+      /* PROJECTS */
+      .projects {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 750px;
+        margin: auto;
+      }
+
+      /* CERTIFICATES */
+      .certs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 750px;
+        margin: auto;
+      }
+      .cert p {
+        color: #a78bfa;
+      }
+      .cert span {
+        color: #94a3b8;
+        font-size: 14px;
+      }
+
+      /* CONTACT */
+      .contact {
+        max-width: 750px;
+        margin: auto;
+      }
+      .contact a {
+        color: #38bdf8;
+        text-decoration: none;
+      }
+      .contact a:hover {
+        text-decoration: underline;
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 30px;
+        border-top: 1px solid #1e293b;
+        color: #94a3b8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav">
+        <button onclick="go('home')">Home</button>
+        <button onclick="go('about')">About</button>
+        <button onclick="go('skills')">Skills</button>
+        <button onclick="go('projects')">Projects</button>
+        <button onclick="go('certificates')">Certificates</button>
+        <button onclick="go('contact')">Contact</button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+      <div>
+        <h1>Rahul A</h1>
+        <h3>AI Engineer</h3>
+        <p>
+          Artificial Intelligence & Data Science student passionate about
+          Python, Machine Learning, and building intelligent real-world
+          solutions.
+        </p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn outline" href="RESUMAE.pdf" download>Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card about-new">
+        <h3>Hi, I’m Rahul 👋</h3>
+        <p>
+          I’m a <b>B.Tech Artificial Intelligence & Data Science</b> student
+          from <b>Velammal Engineering College</b> (2023–2027). I enjoy working
+          with <b>Python, Machine Learning, and Data Science</b>
+          to solve real-world problems.
+        </p>
+        <p>
+          I love learning new technologies, building meaningful projects, and
+          improving my analytical and problem-solving skills.
+        </p>
+        <div class="about-tags">
+          <span>AI & ML</span>
+          <span>Python</span>
+          <span>Data Science</span>
+          <span>Web Development</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <div class="skill">🐍 Python</div>
+        <div class="skill">🌐 HTML</div>
+        <div class="skill">🎨 CSS</div>
+        <div class="skill">⚡ JavaScript</div>
+        <div class="skill">🗄 SQL</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card">
+          <h3>Farmer produce price predictor</h3>
+          <p>
+            predicts crop prices using market trends and helps farmers decide
+            when to sell.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Stock Market Analysis Tool</h3>
+          <p>
+            Python & MySQL based application to analyze stock data and predict
+            trends.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Checksum Generator</h3>
+          <p>MD5 & SHA-256 checksum generator for verifying file integrity.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates">
+      <h2>Certificates & Workshops</h2>
+      <div class="certs">
+        <div class="card cert">
+          <h3>AI Hackathon & Workshop</h3>
+          <p>IIT Madras</p>
+          <span>April 2025</span>
+        </div>
+        <div class="card cert">
+          <h3>Full Stack Development</h3>
+          <p>Novitech</p>
+          <span>April 2025</span>
+        </div>
+        <div class="card cert">
+          <h3>Web Development Workshop</h3>
+          <p>RenderX</p>
+          <span>December 2024</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="card contact">
+        📞 8072023238<br /><br />
+
+        📧
+        <a href="mailto:rahularmstrong2006@gmail.com">
+          rahularmstrong2006@gmail.com </a
+        ><br /><br />
+
+        🔗
+        <a href="https://linkedin.com/in/rahul-177660306" target="_blank">
+          LinkedIn Profile </a
+        ><br /><br />
+
+        🔗
+        <a href="https://github.com/RahulA34" target="_blank">
+          GitHub Profile
+        </a>
+      </div>
+    </section>
+
+    <footer>© 2025 Rahul A | AI Engineer Portfolio</footer>
+
+    <script>
+      function go(id) {
+        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
